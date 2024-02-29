@@ -6,3 +6,11 @@ npx playwright test day1-home_page.spec.js --project=chromium
 npx playwright test day1-home_page.spec.js --project=chromium --headed
 npx playwright test day1-home_page.spec.js --project=chromium --headed --debug
 
+const {test,expect} = require("@playwright/test")
+import {test,expect} from '@playwright/test';
+
+await page.click("//button[contains(@onclick, 'log')]")
+await expect(logout_link).toBeVisible();
+await page.fill("input[id='loginpassword']",'test@123');
+
+const elements=await page.$$(locator)

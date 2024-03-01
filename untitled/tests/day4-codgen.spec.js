@@ -1,0 +1,20 @@
+//npx playwright codegen -o tests/day4-codgen.spec.js
+//npx playwright test day4-codgen.spec.js --project=chromium --headed
+//npx playwright codegen --project=chromium
+//npx playwright codegen --browser chromium
+//npx playwright codegen --device "iPhone 13"
+//npx playwright codegen --viewport-size "1280,720" //1920,1080
+
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.demoblaze.com/index.html');
+  await page.getByRole('link', { name: 'Log in' }).click();
+  await page.locator('#loginusername').click();
+  await page.locator('#loginusername').fill('pavanol');
+  await page.locator('#loginpassword').click();
+  await page.locator('#loginpassword').fill('test@123');
+  await page.getByRole('button', { name: 'Log in' }).click();
+  await page.getByRole('link', { name: 'Samsung galaxy s6' }).click();
+  await page.getByRole('link', { name: 'Log out' }).click();
+});

@@ -56,4 +56,16 @@ test('Assertion test', async ({ page }) => {
     //text portion
     await expect(await page.locator(".page-title h1")).toContainText("Reg")
 
+    //assert value
+    const email_input =   await page.locator("//*[@id='Email']")
+    await email_input.fill("anas.m@exemple.com")
+    await expect(email_input).toHaveValue("anas.m@exemple.com")
+
+    //verify length
+    const options = await page.locator("//select[@name='DateOfBirthMonth']/option")
+    await expect(options).toHaveCount(13)
+
+    //negate
+    const company_name = await  page.locator("//label[@for='Company']")
+    await expect(company_name).not.toHaveValue("Companyy")
 });

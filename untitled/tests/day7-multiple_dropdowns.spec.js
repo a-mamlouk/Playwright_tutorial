@@ -1,7 +1,6 @@
 /*
 URL : https://testautomationpractice.blogspot.com/
 npx playwright test tests/day7-multiple_dropdowns.spec.js --headed --project chromium
-
 */
 import{test,expect} from "@playwright/test";
 test("Multiple drop down tests", async ({page})=>{

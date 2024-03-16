@@ -5,7 +5,7 @@ npx playwright test tests/day12-playwright_hooks.spec.js --headed --project chro
 
 
 import{ test , expect} from "@playwright/test";
-test.skip('Home page Test', async ({page})=>{
+test('Home page Test', async ({page})=>{
     //login
     await page.goto("https://www.demoblaze.com/index.html")
 
@@ -35,7 +35,7 @@ test.skip('Home page Test', async ({page})=>{
 
 test('Add Product to cart Test', async ({page})=>{
     //Login
-    await page.goto("https://www.demoblaze.com/index.html")
+    await page.goto('https://www.demoblaze.com/index.html')
 
     const linkModal = page.locator("xpath=//*[@id='login2']")
     await linkModal.click()

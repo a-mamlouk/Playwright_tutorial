@@ -1,19 +1,14 @@
 /*
-URL : https://www.dia-pen.hr/orbicon/3rdParty/rad-plus/test.html
-npx playwright test tests/day12-upload_files.spec.js --headed --project chromium
+npx playwright test tests/day13.spec.js --headed --project chromium
 */
 
-import{test,expect} from "@playwright/test";
-test('Upload files test ',async ({page})=> {
-    await page.goto("https://www.dia-pen.hr/orbicon/3rdParty/rad-plus/test.html")
-    const inputUserfile = page.locator("xpath=//input[@name='userfile[0]']")
-    await inputUserfile.isVisible()
-    //await inputUserfile.click()
-    await inputUserfile.setInputFiles("/tests/twitch.txt")
+import { test, expect } from '@playwright/test';
 
-    const inputSubmit = page.locator("xpath=//input[@type='submit']")
-    await inputSubmit.click()
-    await page.locator("//td[1][text()='twitch.txt']")
+test.beforeEach(async ({ page }) => {
+    console.log(`Running ${test.info().title}`);
+    await page.goto('https://www.google.fr/');
+});
 
-    await page.waitForTimeout(5000)
-})
+test('my test', async ({ page }) => {
+    expect(page.url()).toBe('https://www.google.fr/');
+});

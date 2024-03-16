@@ -23,15 +23,16 @@ test.beforeAll(async  ({browser})=>{
     await buttonLog.click()
     await page.waitForTimeout(2000)
 })
-test.afterAll(async ({browser})=>{
+test.afterAll(async ()=>{
     //Logout
     const linkLogout = page.locator("xpath=//*[@id='logout2']")
     await linkLogout.click()
     await page.waitForTimeout(1000)
+    await page.close()
 })
 
 
-test('Home page Test 2', async ({page})=>{
+test('Home page Test 2', async ()=>{
 
     //home Page
     await page.waitForTimeout(5000)
@@ -40,14 +41,9 @@ test('Home page Test 2', async ({page})=>{
     console.log("the number of products in page 1 is :",products.length)
     await page.waitForTimeout(1000)
 
-    //Logout
-
-    const linkLogout = page.locator("xpath=//*[@id='logout2']")
-    await linkLogout.click()
-    await page.waitForTimeout(1000)
 });
 
-test.skip('Add Product to cart Test', async ({page})=>{
+test('Add Product to cart Test', async ()=>{
 
     //Add to Cart
     await page.waitForTimeout(5000)

@@ -14,10 +14,14 @@ exports.HomePage = class HomePage{
             }
         }
         await this.page.locator(this.addToCartBtn).click()
+
         await this.page.on('dialog', async dialog =>{
-            if(dialog.message().includes('added')){
+            if(dialog.message().includes('Product added')){
                 await dialog.accept()
             }
         })
+    }
+    async goToCart(){
+        await this.page.locator(this.cart).click()
     }
 }

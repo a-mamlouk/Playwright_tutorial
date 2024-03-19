@@ -1,8 +1,8 @@
 /*
 URL : https://www.demoblaze.com/index.html
-npx playwright test tests/day15-page_object_model.spec.js --headed --project chromium
+npx playwright test tests/day16-retries.spec.js --headed --project chromium --retries=1
 
- */
+*/
 import {test,expect} from "@playwright/test";
 import{LoginPage} from "../pages/LoginPage"
 import {HomePage} from "../pages/HomePage";

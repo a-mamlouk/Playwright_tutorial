@@ -1,4 +1,4 @@
-Allure Reports for Playwright
+Allure Reports for Playwright by Pavan
 
 1) Installation of "allure-playwright" module
 npm i -D @playwright/test allure-playwright

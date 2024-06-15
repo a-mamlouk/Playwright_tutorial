@@ -5,7 +5,7 @@ npx playwright test tests/day14-annotations.spec.js --headed --project chromium
 
 import{test,expect} from "@playwright/test";
 //only
-test("Test1", {
+test("Test", {
     tag :"@sanity"
 },async ({page})=>{
     console.log("This is test number 1")
@@ -31,7 +31,7 @@ test.skip("Test5 tags @sanity @regression", async ({page})=>{
     test.fail()
     expect(1).toEqual(1)
 })
-test("Test5 tags @sanity @regression", async ({page})=>{
+test("Test 6 tags @sanity @regression", async ({page})=>{
     console.log("This is a Failed test, number 5")
     test.slow()
     //    test.setTimeout(6000)

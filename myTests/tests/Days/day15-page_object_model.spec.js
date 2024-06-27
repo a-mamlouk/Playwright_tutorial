@@ -4,9 +4,9 @@ npx playwright test tests/day15-page_object_model.spec.js --headed --project chr
 
  */
 import {test,expect} from "@playwright/test";
-import{LoginPage} from "../pages/LoginPage"
-import {HomePage} from "../pages/HomePage";
-import {CartPage} from "../pages/CartPage";
+import{LoginPage} from "../../pages/LoginPage"
+import {HomePage} from "../../pages/HomePage";
+import {CartPage} from "../../pages/CartPage";
 test('Tests POM', async ({page})=> { //page is a fixture
     //LOGIN
     const login = new LoginPage(page);

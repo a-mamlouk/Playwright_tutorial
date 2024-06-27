@@ -17,7 +17,7 @@ test.afterEach(async()=>{
     console.log("This is a after each hook :') ")
 })
 
-test.describe.only("Group 1-2",()=>{
+test.describe("Group 1-2",()=>{
     test('test 1', async ({ page }) => {
         console.log("This is my test 1")
     });

@@ -14,7 +14,7 @@ test("Full page screenshot", async ({page})=> {
     await page.screenshot({path:"tests/Screenshots/"+Date.now()+"FullHomepage.png",fullPage:true})
     await page.waitForTimeout(1000)
 })
-test.only("Element page screenshot", async ({page})=> {
+test("Element page screenshot", async ({page})=> {
     await page.goto("https://demo.opencart.com/")
     await page.waitForTimeout(5000)
     const Macbook_div = await page.locator("//*[@id='content']/div[2]/div[1]/form/div")

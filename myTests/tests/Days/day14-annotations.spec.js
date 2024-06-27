@@ -11,7 +11,7 @@ test("Test", {
     console.log("This is test number 1")
 })
 
-test.skip("Test2 tags", async ({page})=>{
+test("Test2 tags", async ({page})=>{
     console.log("This is test number 2")
 })
 
@@ -26,7 +26,7 @@ test.fixme("Test4 tags @sanity @regression", async ({page})=>{
     console.log("This is a fix me test, number 4")
 })
 
-test.skip("Test5 tags @sanity @regression", async ({page})=>{
+test("Test5 tags @sanity @regression", async ({page})=>{
     console.log("This is a Failed test, number 5")
     test.fail()
     expect(1).toEqual(1)

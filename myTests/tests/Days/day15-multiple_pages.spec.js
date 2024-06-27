@@ -30,7 +30,7 @@ test('handle multiple pages on windows', async ()=>{
     await page2.close()
 })
 
-test.only('handle multiples pages on windows', async ()=>{
+test('handle multiples pages on windows', async ()=>{
 
     //create context
     const browser = await chromium.launch()
